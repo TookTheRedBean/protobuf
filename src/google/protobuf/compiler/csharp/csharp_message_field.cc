@@ -37,6 +37,7 @@ MessageFieldGenerator::~MessageFieldGenerator() {
 }
 
 void MessageFieldGenerator::GenerateMembers(io::Printer* printer) {
+  printer->Print("[ShowInInspector]\n");
   printer->Print(
     variables_,
     "private $type_name$ $name$_;\n");
@@ -192,6 +193,7 @@ MessageOneofFieldGenerator::~MessageOneofFieldGenerator() {
 void MessageOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
   WritePropertyDocComment(printer, options(), descriptor_);
   AddPublicMemberAttributes(printer);
+  printer->Print("[ShowInInspector]\n");
   printer->Print(
     variables_,
     "$access_level$ $type_name$ $property_name$ {\n"

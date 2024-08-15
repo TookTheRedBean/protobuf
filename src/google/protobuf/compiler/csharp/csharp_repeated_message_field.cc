@@ -56,6 +56,7 @@ void RepeatedMessageFieldGenerator::GenerateMembers(io::Printer* printer) {
     "private readonly pbc::RepeatedField<$type_name$> $name$_ = new pbc::RepeatedField<$type_name$>();\n");
   WritePropertyDocComment(printer, options(), descriptor_);
   AddPublicMemberAttributes(printer);
+  printer->Print("[ShowInInspector]\n");
   printer->Print(
     variables_,
     "$access_level$ pbc::RepeatedField<$type_name$> $property_name$ {\n"

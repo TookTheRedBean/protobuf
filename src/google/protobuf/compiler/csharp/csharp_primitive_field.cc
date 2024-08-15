@@ -68,6 +68,7 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
     variables_["default_value_access"] = std::move(default_value);
   }
 
+  printer->Print("[ShowInInspector]\n");
   // Declare the field itself.
   printer->Print(
     variables_,
@@ -261,6 +262,7 @@ PrimitiveOneofFieldGenerator::~PrimitiveOneofFieldGenerator() {
 void PrimitiveOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
   WritePropertyDocComment(printer, options(), descriptor_);
   AddPublicMemberAttributes(printer);
+  printer->Print("[ShowInInspector]\n");
   printer->Print(
     variables_,
     "$access_level$ $type_name$ $property_name$ {\n"

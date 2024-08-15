@@ -40,6 +40,7 @@ WrapperFieldGenerator::~WrapperFieldGenerator() {
 }
 
 void WrapperFieldGenerator::GenerateMembers(io::Printer* printer) {
+  printer->Print("[ShowInInspector]\n");
   printer->Print(
         variables_,
         "private static readonly pb::FieldCodec<$type_name$> _single_$name$_codec = ");

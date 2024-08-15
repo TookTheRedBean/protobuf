@@ -112,7 +112,8 @@ void ReflectionClassGenerator::WriteIntroduction(io::Printer* printer) {
     "using pb = global::Google.Protobuf;\n"
     "using pbc = global::Google.Protobuf.Collections;\n"
     "using pbr = global::Google.Protobuf.Reflection;\n"
-    "using scg = global::System.Collections.Generic;\n",
+    "using scg = global::System.Collections.Generic;\n"
+    "using Sirenix.OdinInspector;\n",
     "file_name", file_->name());
 
   if (!namespace_.empty()) {
